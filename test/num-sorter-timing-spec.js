@@ -1,7 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 
-const { NumSorter } = require("../problems/02-num-sorter");
+const { NumSorter } = require("../problems/num-sorter");
 
 describe("NumSorter timing", function () {
   this.timeout(4000);

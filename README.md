@@ -1,14 +1,15 @@
-# Sprint 5 Practice Problems
+# Sprint 5, Part 10 Practice Problems
 
-## Usage
+## Setup
 
-1. Clone the starter repo from the green button below.
-2. Rename the folder to `firstname-lastname-sprint-5-practice-problems-1`. For
-   example, if your name is "Jane Doe", then name your folder
-   `firstname-lastname-sprint-5-practice-problems-1`
-3. `cd` into the folder and `npm install` to install dependencies
-4. `mocha` to run all specs
-5. Your objective is to implement the functions in `/problems` to pass all specs
+1. Download the starter using the green button below
+2. Rename the folder to `firstname-lastname-sprint-5-pt-10-practice-problems`. For
+  example, if your name is "Jane Doe", then name your folder
+  `jane-doe-sprint-5-pt-10-practice-problems`
+3. Run `npm install` to install dependencies
+4. Run `npm test` to run test specs
+5. Your objective is to implement the functions in `/problems` to pass all
+  specs.
 
 # Unit Testing Problem
 
@@ -23,43 +24,47 @@ numbers, and a collection of allowed numbers. You can add allowed numbers to
 the list, and retrieve them in the order they were added. You cannot add a
 number to the list that is not allowed.
 
-* `addAllowedNum(num)` adds a number to the "allowed" list
-* `buildNumList(n)` takes in a number, `n` and adds all allowed numbers from 0-n to the list in order.
-* `addNumToBack(num)` adds a number to the back of the number list
-* `getFirstNum()` removes and returns the first number in the number list
-* `isNumAllowed(num)` returns true if the number is in the allowed list
-* `numCount()` returns the amount of numbers in the number list
+-   `addAllowedNum(num)` adds a number to the "allowed" list. Returns a string
+  if successful or denied.
+-   `isNumAllowed(num)` returns true if the number is in the allowed list.
+-   `addNumToBack(num)` adds a number to the back of the number list. Returns
+  the last number in `numList`.
+-   `getFirstNum()` removes and returns the first number in the number list;
+  returns `undefined` if `numList` is empty.
+-   `numCount()` returns the amount of numbers in the number list.
+-   `buildNumList(n)` takes in a number, `n` and adds all allowed numbers from
+  0 through n to the list in order. It returns the length of the `numList`.
 
-## Directions
+When you first run specs, implementation specs will be passing with the
+exception of the two asking you to change your array data structures. Combined
+with the timing benchmark specs, you will see that the `NumSorter` already
+works but it is slow.
 
-* Install packages using `npm install`
-* Run tests using `npm test`
+Your task is to optimize the code until all implementation *and* timing tests
+are passing. The performance is normalized with a speed benchmark so the tests
+should run similarly regardless of the speed of your computer.
 
-Your task is to optimize the code until all 10 timing tests are passing. The
-performance is normalized with a speed benchmark so the tests should run
-similarly regardless of the speed of your computer.
+You must optimize without changing the logic of the `NumSorter`. This means
+that __overall functionality must remain the same__ (i.e., if you change code
+in a method, the method must still be fulfilling its original purpose).
 
-You must optimize without changing the logic of the `NumSorter`. If you see a
-`Incorrect num logic` message when your spec fails, it means you have broken
-the the logic. You must fix this before performance tests will run.
-
-You are allowed to access any code or classes you have implemented this week
-for the assessment.
+If you see failing specs from `implementation-spec`, it means the logic must be
+corrected before you continue. You must fix this before performance tests will
+run.
 
 ## Num Sorter Hints
 
 1. Start by understanding the problem and identifying performance bottlenecks.
 2. Use big-O analysis: Which operations can be optimized?
-3. Consider all the tools (data structures) you have learned this week and
-   pick the right tool for the job.  An optimal solution for this problem will
-   use 1 set, 1 linked list, and 0 arrays.
-   - Important Note: You **must** use the `LinkedList` class provided for you in
-     the starter code
-
-Fill out the code in the `./problems/02-num-sorter.js` file.
+3. Consider all the tools (data structures) you have learned this week and pick
+  the right tool for the job.
+    - __An optimal solution for this problem will use 1 set, 1 linked list, and 0__
+    __arrays.__
+    - Important Note: You __must__ use the `LinkedList` class provided for you in
+    the starter code.
 
 There are two test sets of specs for this problem, implementation and timing
-specs.
+specs. There are local tests available as well to verify your work.
 
 You can test the implementation of your code with the implementation specs
 using the following command:
@@ -83,7 +88,3 @@ yours, so the amount of test specs you actually fail/pass may be different from
 what you see in your local machine when you run the timing specs. Make sure you
 read the instructions carefully to check that you achieved what the problem is
 asking you to do.
-
-
-[week-5-practice-problems]: https://github.com/appacademy/assessment-for-week-05-v2-practice-a-unit-test-practice-problems
-[fromCharCode-mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
