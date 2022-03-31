@@ -60,7 +60,7 @@ Above is the given linked list based queue; it should not be modified
 Below is the NumSorter class that is to be refactored
 */
 class NumSorter {
-  constructor(maxNums) {
+  constructor() {
     this.numList = [];
 
     this.allowedNums = [];
